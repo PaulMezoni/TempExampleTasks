@@ -3,7 +3,7 @@ package Calculator;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class Carburetor {
+public class Main {
 
     public static void main(String[] args) {
 
@@ -19,7 +19,7 @@ public class Carburetor {
 
             } catch (RuntimeException e) {
                 System.err.println(e.getMessage());
-                break;
+//                break;
             }
         }
     }
@@ -51,8 +51,8 @@ class DataCalculator {
             }               // завершилось условие, но итерация продолжается
 
             if (flag) {
-                x = RomanToArab.romanToArab((blocks[0]).trim());
-                y = RomanToArab.romanToArab((blocks[1]).trim());
+                x = RomanToArab.romanToArab((blocks[0]));
+                y = RomanToArab.romanToArab((blocks[1]));
             } else {        // здесь завершается 2 условие и начинается 3, но цикл идёт дальше
                 x = Integer.parseInt(blocks[0].trim());
                 y = Integer.parseInt(blocks[1].trim());
@@ -60,23 +60,22 @@ class DataCalculator {
             operation = expression.charAt(blocks[0].length());
 
             int result = Calculator.calculate(getVar1(), getVar2(), getOper());
+            // исключения и ошибки
+//            if (result <= 0 || result > 10) {
+//                throw new IllegalArgumentException();
+//            }
 
+            if ((x > 10 || x < 1) && (y > 10 || y < 1)) {
+                throw new IllegalArgumentException("<<  Неверный формат данных  >>");
+            }
             if (!flag) {
                 System.out.println(result); // арабский
             }
             if (flag) {
                 System.out.println(ArabToRoman.toRoman(result)); // римский
             }
-
-            // исключения и ошибки
-            if (result <= 0) {
-                throw new IllegalArgumentException();
-            }
-            if ((x > 10 || x < 1) || (y > 10 || y < 1)) {
-                throw new IllegalArgumentException("<<Неверный формат данных>>");
-            }
         } catch (RuntimeException e) {
-            throw new IllegalArgumentException("<<Неверный формат данных>>");
+            throw new IllegalArgumentException("<<  Неверный формат данных   >>");
         } finally {
             System.out.print("");
         }
@@ -104,7 +103,7 @@ class Calculator {
             case '-' -> number1 - number2;
             case '*' -> number1 * number2;
             case '/' -> number1 / number2;
-            default -> throw new IllegalArgumentException("Неверный знак операции");
+            default -> throw new IllegalArgumentException("<<   Неверный знак операции   >>");
         };
     }
 }

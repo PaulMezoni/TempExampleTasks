@@ -1,9 +1,9 @@
 package TaskCodeCombat;
 
 public class Person {
-    Integer id;
-    String name;
-    Integer average;
+    volatile Integer id;
+    volatile String name;
+    volatile Integer average;
 
     public Person(Integer id, String name, Integer average) {
         this.id = id;

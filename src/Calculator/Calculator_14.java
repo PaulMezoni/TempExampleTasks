@@ -84,7 +84,6 @@ public class Calculator_14 {
 
     //Калькулятор
     public static class Calculator {
-
         public static int calculate(int a, int b, int operation) {
             return switch (operation) {
                 case 1 -> a + b;

@@ -81,12 +81,12 @@ public class Calculator_13 {
         return new int[]{0, 0};
     }
 
-    public static int operation(int val1, int val2, String oper) {
-        if ("+".equals(oper)) {
+    public static int operation(int val1, int val2, String operation) {
+        if ("+".equals(operation)) {
             return val1 + val2;
-        } else if ("-".equals(oper)) {
+        } else if ("-".equals(operation)) {
             return val1 - val2;
-        } else if ("*".equals(oper)) {
+        } else if ("*".equals(operation)) {
             return val1 * val2;
         }
         return val1 / val2;

@@ -51,8 +51,8 @@ class DataCalculator {
             }               // завершилось условие, но итерация продолжается
 
             if (flag) {
-                x = RomanToArab.romanToArab((blocks[0]));
-                y = RomanToArab.romanToArab((blocks[1]));
+                x = RomanToArab.romanToArab((blocks[0].trim()));
+                y = RomanToArab.romanToArab((blocks[1].trim()));
             } else {        // здесь завершается 2 условие и начинается 3, но цикл идёт дальше
                 x = Integer.parseInt(blocks[0].trim());
                 y = Integer.parseInt(blocks[1].trim());
@@ -98,13 +98,24 @@ class DataCalculator {
 class Calculator {
 
     public static int calculate(int number1, int number2, char operation) {
-        return switch (operation) {
-            case '+' -> number1 + number2;
-            case '-' -> number1 - number2;
-            case '*' -> number1 * number2;
-            case '/' -> number1 / number2;
-            default -> throw new IllegalArgumentException("<<   Неверный знак операции   >>");
-        };
+        int result;
+        switch (operation) {
+            case '+':
+                result = number1 + number2;
+                break;
+            case '-':
+                result = number1 - number2;
+                break;
+            case '*':
+                result = number1 * number2;
+                break;
+            case '/':
+                result = number1 / number2;
+                break;
+            default:
+                throw new IllegalArgumentException("<<   Неверный знак операции   >>");
+        }
+        return result;
     }
 }
 

@@ -33,14 +33,14 @@ public class TwoSumEx {
 
     // speed: O(n2) memory: O(1)
     static int[] twoSumTwoFor(int[] nums, int target) {
-        for (int value : nums) {
-            for (var j = 1; j < nums.length; j++) {
-                if (target == value + nums[j]) {
-                    return new int[]{value, nums[j]};
+        for (int i : nums) {
+            for (var j : nums) {
+                if (target == i + j) {
+                    return new int[]{i, j};
                 }
             }
         }
-        return new int[0];
+        return new int[]{};
     }
 
     // speed: O(n) memory: O(1)

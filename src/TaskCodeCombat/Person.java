@@ -5,6 +5,14 @@ public class Person {
     volatile String name;
     volatile Integer average;
 
+    public Person() {
+        System.out.println(" person default");
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
+
     public Person(Integer id, String name, Integer average) {
         this.id = id;
         this.name = name;

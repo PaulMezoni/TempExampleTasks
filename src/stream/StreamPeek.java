@@ -11,5 +11,7 @@ public class StreamPeek {
                 .peek(System.out::println)
                 .anyMatch("B"::equals);
         System.out.println(b);
+
+
     }
 }

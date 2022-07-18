@@ -12,7 +12,7 @@ public class Arrays_Mentor {
         counter(3);
 
         int[] arr = {3, 5, 20, 8, 7, 3, 100};
-        String[] strings = {"Tom", "Adam", "Cat", "Bob", "Dilan"};
+        String[] strings = {"Tom", "Adam", "Generics/game/Cat", "Bob", "Dilan"};
 //        printOddNumbers(arr);
 
         // переполнение  = -294_967_296
@@ -36,7 +36,9 @@ public class Arrays_Mentor {
         byte b = 2;
         byte c = (byte) (a + b);
 //        System.out.println(c);
-
+        System.out.println(isPalindrome("amA") + " isPalindrome");
+        System.out.println(isPalindrome("ama") + " isPalindrome");
+        System.out.println(isPalindrome("amas") + " isPalindrome");
 
 //        System.out.println(BigInteger.valueOf(2));
 //        System.out.println(Integer.MAX_VALUE);
@@ -73,7 +75,7 @@ public class Arrays_Mentor {
                 "Артемий Филиппович: Вот не было заботы, так подай!",
                 "Лука Лукич: Господи боже! еще и с секретным предписаньем!"
         };
-        System.out.println(printTextPerRole(roles, textLines));
+//        System.out.println(printTextPerRole(roles, textLines));
 
     }
 
@@ -93,10 +95,10 @@ public class Arrays_Mentor {
 
     // 2.3.10
     public static boolean isPalindrome(String text) {
+        System.out.print(text + " ");
         //Твой код здесь
-        String a = text.toLowerCase().replaceAll("[^a-z]", ""); // нижний регистр и удаление пробелов
-        String b = new StringBuilder(a).reverse().toString(); // реверс
-        return a.equals(b); // возврат и сравнение
+        text = text.replaceAll("\\W", "");
+        return text.equalsIgnoreCase(new StringBuilder(text).reverse().toString());
     }
 
     //2.4.13

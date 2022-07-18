@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class TestEx {
     String name;
+
     public TestEx(String name) {
         this.name = name;
     }
@@ -12,7 +13,8 @@ public class TestEx {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof TestEx testEx)) return false;
+        if (!(o instanceof TestEx)) return false;
+        TestEx testEx = (TestEx) o;
         return Objects.equals(name, testEx.name);
     }
 

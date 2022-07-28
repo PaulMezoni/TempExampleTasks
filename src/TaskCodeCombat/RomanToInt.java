@@ -2,15 +2,11 @@ package TaskCodeCombat;
 
 public class RomanToInt {
     public static void main(String[] args) {
-//        System.out.println(romanToInt("I"));
-//        System.out.println(romanToInt("II"));
-//        System.out.println(romanToInt("IVV"));
-//        System.out.println(romanToInt("IV"));
-//        System.out.println(romanToInt("V"));
-        System.out.println(arabicToRoman(romanToInt("VI")).equals("VI"));
-        String i = romanToInt("V");
-        Integer x = 5;
-        System.out.println(x.equals(Integer.parseInt(i)) + " : " + romanToInt("V"));
+        System.out.println(romanToInt("I"));
+        System.out.println(romanToInt("II"));
+        System.out.println(romanToInt("IVV"));
+        System.out.println(romanToInt("IV"));
+        System.out.println(romanToInt("V"));
     }
 
     public static String arabicToRoman(String numerals) {
@@ -28,7 +24,7 @@ public class RomanToInt {
         return sb.toString();
     }
 
-    public static String romanToInt(String s) {
+    public static int romanToInt(String s) {
         char[] sc = s.toCharArray();
         int sum = 0;
         for (int index = sc.length - 1; index >= 0; index--) {
@@ -48,6 +44,6 @@ public class RomanToInt {
                 sum += 1000;
             }
         }
-        return String.valueOf(sum);
+        return sum;
     }
 }

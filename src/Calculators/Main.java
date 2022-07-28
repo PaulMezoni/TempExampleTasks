@@ -1,4 +1,4 @@
-package Calculator;
+package Calculators;
 
 import java.util.Scanner;
 import java.util.TreeMap;
